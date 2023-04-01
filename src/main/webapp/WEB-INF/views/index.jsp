@@ -7,10 +7,11 @@
 </head>
 <body>Hello, Spring Boot App
 <br>
+<c:set var="langdiv" value="1" />
 
 <select id="type">
     <c:forEach var="code" items="${boardTypeList}" varStatus="i">
-        <option value="${code.key}">${code.engval}</option>
+        <option value="${code.key}"><c:if test="${langdiv eq '1'}">${code.engval}</c:if><c:if test="${langdiv ne '1'}">${code.value}</c:if></option>
     </c:forEach>
 </select>
 <br>
