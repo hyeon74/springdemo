@@ -29,4 +29,12 @@ public class JspController {
 
         return "index";
     }
+
+    @GetMapping("/test")
+    public String test(Model model){
+
+        model.addAttribute("test", "test" );
+
+        return "test";
+    }
 }
